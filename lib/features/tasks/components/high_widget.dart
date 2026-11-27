@@ -4,9 +4,9 @@
 import 'package:flutter/material.dart';
 import 'package:tasky/core/widgets/coustemchickbox.dart';
 
-import '../core/enum/enumforactions.dart';
-import '../core/theme/theme_controler.dart';
-import '../models/task_model.dart';
+import '../../../core/enum/enumforactions.dart';
+import '../../../core/theme/theme_controler.dart';
+import '../../../models/task_model.dart';
 
 class HighWidget extends StatelessWidget {
   const HighWidget({super.key, required this.task, required this.ontap, required this.refreash, required this.delete_task, required this.edit_task});

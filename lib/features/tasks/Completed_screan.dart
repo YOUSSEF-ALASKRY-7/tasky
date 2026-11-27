@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import '../../core/services/preferences_manger.dart';
 import '../../core/widgets/costumformfiled.dart';
 import '../../models/task_model.dart';
-import '../../widgets/task_lest_widgets.dart';
+import 'components/task_lest_widgets.dart';
+
 
 class CompletedScrean extends StatefulWidget {
   const CompletedScrean({super.key});

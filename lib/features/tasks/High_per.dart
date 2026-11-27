@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import '../../core/services/preferences_manger.dart';
 import '../../core/widgets/costumformfiled.dart';
 import '../../models/task_model.dart';
-import '../../widgets/high_widget.dart';
-import '../../widgets/task_lest_widgets.dart';
+
+
+import 'components/high_widget.dart';
 
 class HighPer extends StatefulWidget {
   const HighPer({super.key});

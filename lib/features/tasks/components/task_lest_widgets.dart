@@ -3,7 +3,9 @@ import 'package:tasky/core/theme/theme_controler.dart';
 import 'package:tasky/core/widgets/coustemchickbox.dart';
 import 'package:tasky/models/task_model.dart';
 
-import '../core/enum/enumforactions.dart';
+import '../../../core/enum/enumforactions.dart';
+
+
 
 class TaskLestWidgets extends StatelessWidget {
   const TaskLestWidgets({super.key, required this.task, required this.ontap, required this.delete_task, required this.edit_task});
