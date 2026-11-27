@@ -4,16 +4,16 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:tasky/Screens/Add_text.dart';
+import 'package:tasky/features/tasks/Add_text.dart';
 import 'package:tasky/core/theme/theme_controler.dart';
 import 'package:tasky/models/task_model.dart';
 
-import '../core/enum/enumforactions.dart';
-import '../core/services/preferences_manger.dart';
-import '../core/widgets/costumformfiled.dart';
-import '../core/widgets/coustemchickbox.dart';
-import 'Achieved_Tasks.dart';
-import 'High_per.dart';
+import '../../core/enum/enumforactions.dart';
+import '../../core/services/preferences_manger.dart';
+import '../../core/widgets/costumformfiled.dart';
+import '../../core/widgets/coustemchickbox.dart';
+import '../tasks/Achieved_Tasks.dart';
+import '../tasks/High_per.dart';
 
 class HomeScrean extends StatefulWidget {
   const HomeScrean({super.key});

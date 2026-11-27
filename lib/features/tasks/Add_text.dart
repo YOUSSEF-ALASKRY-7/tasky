@@ -5,7 +5,7 @@ import 'package:tasky/core/widgets/costumformfiled.dart';
 
 import 'package:tasky/models/task_model.dart';
 
-import '../core/services/preferences_manger.dart';
+import '../../core/services/preferences_manger.dart';
 
 class AddText extends StatefulWidget {
   const AddText({super.key});

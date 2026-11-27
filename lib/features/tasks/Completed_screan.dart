@@ -2,30 +2,27 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-import '../core/services/preferences_manger.dart';
-import '../core/widgets/costumformfiled.dart';
-import '../models/task_model.dart';
-import '../widgets/high_widget.dart';
-import '../widgets/task_lest_widgets.dart';
+import '../../core/services/preferences_manger.dart';
+import '../../core/widgets/costumformfiled.dart';
+import '../../models/task_model.dart';
+import '../../widgets/task_lest_widgets.dart';
 
-class HighPer extends StatefulWidget {
-  const HighPer({super.key});
+class CompletedScrean extends StatefulWidget {
+  const CompletedScrean({super.key});
 
   @override
-  State<HighPer> createState() => _HighPerState();
+  State<CompletedScrean> createState() => _CompletedScreanState();
 }
 
-class _HighPerState extends State<HighPer> {
+class _CompletedScreanState extends State<CompletedScrean> {
   int iscjecked = 0;
-
   List<TaskModel> todo_tasks = [];
-
   List<TaskModel> task = [];
 
   void To_Do(List<TaskModel> tasklist) {
     todo_tasks.clear();
     for (int i = 0; i < tasklist.length; i++) {
-      if (tasklist[i].pero == true) {
+      if (tasklist[i].isChecked == true) {
         todo_tasks.add(tasklist[i]);
       }
     }
@@ -64,7 +61,7 @@ class _HighPerState extends State<HighPer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("High Priority Tasks")),
+      appBar: AppBar(title: Text("Completed Tasks")),
       body: SafeArea(
         child: todo_tasks.isEmpty
             ? Container(
@@ -76,21 +73,18 @@ class _HighPerState extends State<HighPer> {
                 ),
                 child: const Center(
                   child: Text(
-                    "No tasks yet",
+                    "Completed Tasks",
                     style: TextStyle(color: Color(0xffA0A0A0), fontSize: 16),
                   ),
                 ),
               )
             : Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: HighWidget(
-                  refreash: () {
-                    loedTask();
-                  },
+                child: TaskLestWidgets(
                   task: todo_tasks,
                   ontap: (TaskModel? changedTask, bool? value) {
                     setState(() {
-                      changedTask!.isChecked = value ?? false;
+                      changedTask!.isChecked = value ?? true;
                     });
                     saveTasks();
                     loedTask();
@@ -191,9 +185,7 @@ class _HighPerState extends State<HighPer> {
                                               currentTask.TaskName = controller1.text;
                                               currentTask.TaskDesc = controller2.text;
                                               currentTask.pero = highPriority;
-                                              To_Do(task);
                                             });
-
                                             saveTasks();
                                             Navigator.pop(sheetContext);
                                           }

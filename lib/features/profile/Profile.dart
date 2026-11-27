@@ -6,12 +6,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 
-import 'package:tasky/Screens/Welcome_screan.dart';
-import 'package:tasky/Screens/useredit.dart';
+import 'package:tasky/features/welcome/Welcome_screan.dart';
+import 'package:tasky/features/profile/useredit.dart';
 import 'package:tasky/core/theme/theme_controler.dart';
 import 'package:tasky/main.dart';
 
-import '../core/services/preferences_manger.dart';
+import '../../core/services/preferences_manger.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});

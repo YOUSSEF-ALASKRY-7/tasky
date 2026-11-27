@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:tasky/Screens/Home_Screan.dart';
-import 'package:tasky/Screens/Welcome_screan.dart';
-import 'package:tasky/Screens/main_screan.dart';
+import 'package:tasky/features/home/Home_Screan.dart';
+import 'package:tasky/features/welcome/Welcome_screan.dart';
+import 'package:tasky/features/main/main_screan.dart';
 import 'package:tasky/core/theme/light.dart';
 import 'package:tasky/core/theme/theme_controler.dart';
 

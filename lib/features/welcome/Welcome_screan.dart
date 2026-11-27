@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:tasky/Screens/main_screan.dart';
+import 'package:tasky/features/main/main_screan.dart';
 
-import '../core/services/preferences_manger.dart';
-import '../core/widgets/costumformfiled.dart';
+import '../../core/services/preferences_manger.dart';
+import '../../core/widgets/costumformfiled.dart';
 
 class WelcomeScrean extends StatefulWidget {
   const WelcomeScrean({super.key});

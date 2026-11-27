@@ -2,27 +2,30 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-import '../core/services/preferences_manger.dart';
-import '../core/widgets/costumformfiled.dart';
-import '../models/task_model.dart';
-import '../widgets/task_lest_widgets.dart';
+import '../../core/services/preferences_manger.dart';
+import '../../core/widgets/costumformfiled.dart';
+import '../../models/task_model.dart';
+import '../../widgets/high_widget.dart';
+import '../../widgets/task_lest_widgets.dart';
 
-class CompletedScrean extends StatefulWidget {
-  const CompletedScrean({super.key});
+class HighPer extends StatefulWidget {
+  const HighPer({super.key});
 
   @override
-  State<CompletedScrean> createState() => _CompletedScreanState();
+  State<HighPer> createState() => _HighPerState();
 }
 
-class _CompletedScreanState extends State<CompletedScrean> {
+class _HighPerState extends State<HighPer> {
   int iscjecked = 0;
+
   List<TaskModel> todo_tasks = [];
+
   List<TaskModel> task = [];
 
   void To_Do(List<TaskModel> tasklist) {
     todo_tasks.clear();
     for (int i = 0; i < tasklist.length; i++) {
-      if (tasklist[i].isChecked == true) {
+      if (tasklist[i].pero == true) {
         todo_tasks.add(tasklist[i]);
       }
     }
@@ -61,7 +64,7 @@ class _CompletedScreanState extends State<CompletedScrean> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Completed Tasks")),
+      appBar: AppBar(title: Text("High Priority Tasks")),
       body: SafeArea(
         child: todo_tasks.isEmpty
             ? Container(
@@ -73,18 +76,21 @@ class _CompletedScreanState extends State<CompletedScrean> {
                 ),
                 child: const Center(
                   child: Text(
-                    "Completed Tasks",
+                    "No tasks yet",
                     style: TextStyle(color: Color(0xffA0A0A0), fontSize: 16),
                   ),
                 ),
               )
             : Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: TaskLestWidgets(
+                child: HighWidget(
+                  refreash: () {
+                    loedTask();
+                  },
                   task: todo_tasks,
                   ontap: (TaskModel? changedTask, bool? value) {
                     setState(() {
-                      changedTask!.isChecked = value ?? true;
+                      changedTask!.isChecked = value ?? false;
                     });
                     saveTasks();
                     loedTask();
@@ -185,7 +191,9 @@ class _CompletedScreanState extends State<CompletedScrean> {
                                               currentTask.TaskName = controller1.text;
                                               currentTask.TaskDesc = controller2.text;
                                               currentTask.pero = highPriority;
+                                              To_Do(task);
                                             });
+
                                             saveTasks();
                                             Navigator.pop(sheetContext);
                                           }

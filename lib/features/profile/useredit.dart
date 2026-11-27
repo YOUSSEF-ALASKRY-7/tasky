@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 
-import '../core/services/preferences_manger.dart';
-import '../core/widgets/costumformfiled.dart';
+import '../../core/services/preferences_manger.dart';
+import '../../core/widgets/costumformfiled.dart';
 
 class Useredit extends StatefulWidget {
   const Useredit({super.key});
